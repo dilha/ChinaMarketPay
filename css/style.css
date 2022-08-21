@@ -14,12 +14,7 @@ body {
     font-family: 'Aboreto', cursive;
     font-style: normal;
     font-weight: normal;
-    background-image: url(../images/intro-bg.jpg);
-    background-repeat: no-repeat;
-    background-position: fixed;
-    background-position: center bottom;
-    background-size: cover;
-    background-attachment: fixed;
+
     color: #fff;
     line-height: 130%;
     overflow-x: hidden;
@@ -41,6 +36,14 @@ a {
 }
 
 .body {
+    background-image: url(../images/intro-bg.jpg);
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.box {
     background-color: rgba(0, 0, 0, 0.3);
     height: 100%;
 }
