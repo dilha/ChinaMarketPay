@@ -11,7 +11,16 @@ $(function () {
         } else {
             header.removeClass('active');
         }
-
     });
+
+    $('.burger').on('click', () => {
+        $('.burger').toggleClass('burger--active');
+        $('.header__menu').toggleClass('active');
+    })
+
+    $('.header__nav-link').on('click', () => {
+        $('.burger').removeClass('burger--active');
+        $('.header__menu').removeClass('active');
+    })
 
 });

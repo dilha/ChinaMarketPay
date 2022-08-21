@@ -22,6 +22,7 @@ body {
     background-attachment: fixed;
     color: #fff;
     line-height: 130%;
+    overflow-x: hidden;
 }
 
 ul {
@@ -115,8 +116,67 @@ a {
     margin-left: 20px;
 }
 
+.header__menu {
+    margin-left: 100px;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
 /* header end */
 
+/* burger start */
+.burger {
+    display: none;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    padding: 0;
+    cursor: pointer;
+    z-index: 100;
+  }
+  .burger.burger--active .burger-line {
+    opacity: 0;
+    -webkit-transition: opacity 0s;
+    transition: opacity 0s;
+  }
+  .burger.burger--active::after {
+    width: 45px;
+    -webkit-transform: translateY(-16px) rotate(-135deg);
+            transform: translateY(-16px) rotate(-135deg);
+  }
+  .burger.burger--active::before {
+    -webkit-transform: translateY(13px) rotate(135deg);
+            transform: translateY(13px) rotate(135deg);
+  }
+  .burger::before, .burger::after {
+    content: "";
+    -webkit-transition: -webkit-transform 0.2s linear;
+    transition: -webkit-transform 0.2s linear;
+    transition: transform 0.2s linear;
+    transition: transform 0.2s linear, -webkit-transform 0.2s linear;
+    width: 45px;
+    height: 4px;
+    background-color: #ffff;
+    display: block;
+    margin-bottom: 10px;
+  }
+  .burger::after {
+    margin-bottom: 0;
+    margin-left: auto;
+  }
+  .burger-line {
+    background-color: #ffff;
+    width: 45px;
+    height: 4px;
+    display: block;
+    margin-bottom: 10px;
+    -webkit-transition: opacity 0.7s;
+    transition: opacity 0.7s;
+  }
+  
+  /* burger end */
 
 /* intro start */
 
@@ -214,7 +274,11 @@ a {
 
 .contacts__title {
     font-size: 30px;
-    margin-bottom: 30px;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.contacts__inner {
     text-align: center;
 }
 
@@ -222,13 +286,101 @@ a {
     margin-top: 20px;
 }
 
-.contacts__link img {
-    width: 50px;
-    height: 50px;
-}
-
 .contacts__social-title {
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+.contacts__link {
+    display: block;
+    font-size: 20px;
     margin-bottom: 10px;
 }
 
+.contacts__social-whatsapp .contacts__link {
+    display: inline-block;
+}
+
+.contacts__link img {
+    width: 80px;
+    height: 80px;
+}
+
+
 /* contacts end */
+
+
+/* media srart */
+
+
+@media(max-width: 800px) {
+    .header__menu {
+        margin-left: 20px;
+    }
+}
+
+
+@media(max-width: 700px) {
+    
+.page__block {
+    padding: 50px 0;
+}
+.header {
+    padding: 10px 0;
+}
+
+    .burger {
+        display: block;
+    }
+    .header__menu {
+        flex-direction: column;
+        justify-content: flex-start;
+        background-color: rgba(0, 0, 0, 0.8);
+        position: absolute;
+        top: 0;
+        right: -100%;
+        bottom: 0;
+        width: auto;
+        height: 100vh;
+        padding: 100px 40px 20px 80px;
+        transition: all .2s linear;
+    }
+
+    .header__menu.active {
+        right: 0;
+    }
+
+    .header__nav-list{
+        display: block;
+        text-align: right;
+    }   
+    
+    .header__nav-item + .header__nav-item {
+        margin-left: 0;
+    }
+
+    .header__nav-item {
+        margin-bottom: 30px;
+    }
+
+    .header__nav-link {
+        font-size: 25px;
+    }
+
+    .intro__title {
+        font-size: 25px;
+    }
+
+    .intro__text {
+        font-size: 18px;
+    }
+
+    .service__inner {
+        grid-template-columns: 1fr;
+    }
+
+    .about__text {
+        font-size: 18px;
+    }
+}
+
+/* media end */
