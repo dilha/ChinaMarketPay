@@ -23,4 +23,9 @@ $(function () {
         $('.header__menu').removeClass('active');
     })
 
+    $('.service__item-title').on('click', (e) => {
+        $(e.target).toggleClass('active')
+        $(e.target.nextElementSibling).toggleClass('active')
+    })
+    
 });
